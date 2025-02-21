@@ -52,3 +52,19 @@
   margin-top: 100px;
 }
 
+.program-switch-left{
+  top:350px; 
+  left:0px; 
+  position:absolute;
+}
+
+.program-switch-right{
+  top:350px; 
+  right:0px; 
+  position:absolute;
+}
+
+.switch-buttons{
+  height:100px; 
+  left:0px;
+}
