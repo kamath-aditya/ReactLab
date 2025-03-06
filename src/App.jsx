@@ -5,6 +5,8 @@ import SearchFilter from './searchFilter';
 import Login from './login';
 import Accordian from './accordian';
 import Checklist from './checklist';
+import RandomUserData from './randomUserData';
+import RandomImage from './randomImage';
 import './App.css';
 
 function App() {
@@ -17,7 +19,9 @@ function App() {
     { name: '3. Image-slider', component: <ImageSlider /> },
     { name: '4. Accordian', component: <Accordian /> },
     { name: '5. Checklist', component: <Checklist /> },
-    { name: '6. Login', component: <Login /> }
+    { name: '6. Login', component: <Login /> },
+    { name: '7. Random User Data', component: <RandomUserData /> },
+    { name: '8. Random Image', component: <RandomImage /> },
   ];
 
   const changeProgram = (step) => {
