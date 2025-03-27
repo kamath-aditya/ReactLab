@@ -21,31 +21,39 @@ function Login() {
     return (
         <div>
             <h2>Login Website</h2>
-            <form onSubmit={handleLogin}>
-                <div>
-                    <label>Username: </label>
-                    <input
-                        type="text"
-                        placeholder="Username"
-                        value={username}
-                        onChange={(e) => setUsername(e.target.value)}
-                    />
-                </div>
-                <div>
-                    <label>Password: </label>
-                    <input
-                        type="password"
-                        placeholder="Password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                    />
-                </div>
-                <div>
-                    <button type="submit">Login</button>
-                </div>
-                {error && <div style={{ color: "red", marginTop: "10px" }}>{error}</div>}
-                {loggedIn && <div style={{ color: "green", marginTop: "10px" }}>Logged in successfully</div>}
-            </form>
+            <div>
+                {loggedIn ? (
+                    <div>
+                        <h3>Welcome Admin</h3>
+                        <button type="submit" onClick={()=>setLoggedIn(false)}>SignOut</button>
+                    </div>
+                ):(
+                    <form onSubmit={handleLogin}>
+                        <div>
+                            <label>Username: </label>
+                            <input
+                                type="text"
+                                placeholder="Username"
+                                value={username}
+                                onChange={(e) => setUsername(e.target.value)}
+                            />
+                        </div>
+                        <div>
+                            <label>Password: </label>
+                            <input
+                                type="password"
+                                placeholder="Password"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                            />
+                        </div>
+                        <div>
+                            <button type="submit">Login</button>
+                        </div>
+                        {error && <div style={{ color: "red", marginTop: "10px" }}>{error}</div>}
+                    </form>
+                )}
+            </div>
         </div>
     );
 }

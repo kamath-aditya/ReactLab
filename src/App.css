@@ -19,7 +19,7 @@
   height: 40px;
   top: 15px;
   left: 10px;
-  background-color: #091d33;
+  background-color: #478bd3;
   border: none;
   border-radius: 5px;
 }
@@ -34,7 +34,7 @@
   position: absolute;
   top: 57px;
   left: 10px;
-  background-color: rgb(0, 0, 0);
+  background-color: rgb(136, 171, 223);
   border-radius: 10px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   padding: 10px;
