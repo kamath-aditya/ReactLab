@@ -4,9 +4,20 @@ const Accordion_list = ({ title, content }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div style={{ border: "1px solid ", borderRadius: "5px", marginBottom: "10px", padding: "10px" }}>
-      <div onClick={() => setIsOpen(!isOpen)} style={{ cursor: "pointer", fontWeight: "bold", padding: "10px" }}>
-        {title} {isOpen ? "▼" : "▶"}
+    <div 
+      style={{ 
+        border: "1px solid ", 
+        borderRadius: "5px", 
+        marginBottom: "10px", 
+        padding: "10px" 
+      }}
+    >
+      <div 
+        onClick={() => setIsOpen(!isOpen)} 
+        style={{ cursor: "pointer", fontWeight: "bold", padding: "10px" }}
+      >
+        {title} 
+        {isOpen ? "▼" : "▶"}
       </div>
       {isOpen && <div style={{ padding: "10px" }}>{content}</div>}
     </div>

@@ -8,7 +8,9 @@ function Checklist(){
     const [selectedItems,setSelectedItems]=useState([]);
     const handleChange= (event) => { 
         const {value,checked} = event.target;
-        setSelectedItems((prev) => checked ? [...prev,value] : prev.filter((item) => item !== value));
+        setSelectedItems((prev) => checked ? 
+            [...prev,value] : prev.filter((item) => item !== value)
+        );
     };
     return(
         <div>
@@ -16,7 +18,12 @@ function Checklist(){
             <div>
                 {groceryItems.map((item)=>(
                     <label key={item}>
-                        <input type="checkbox" value={item} onChange={handleChange} checked={selectedItems.includes(item)}/>
+                        <input 
+                            type="checkbox" 
+                            value={item} 
+                            onChange={handleChange} 
+                            checked={selectedItems.includes(item)}
+                        />
                         {item}
                     </label>
                 ))}
@@ -25,7 +32,9 @@ function Checklist(){
                 <h2>Items to Buy:</h2>
                 {selectedItems.length>0?(
                     <ul style={{ listStyleType: 'none', padding: 0, margin: 0 }}>
-                        {selectedItems.map((item)=>( <li key={item}>{item}</li> ))}
+                        {selectedItems.map((item) => ( 
+                            <li key={item}>{item}</li> 
+                        ))}
                     </ul>
                     ):( <p>No items selected</p> )
                 }

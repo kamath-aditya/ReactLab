@@ -11,7 +11,7 @@ function RandomUserData () {
 
     return(
         <div>
-            {userData && (
+            {userData? (
                 <div>
                     <h1>User Information</h1>
                     <p>
@@ -21,7 +21,9 @@ function RandomUserData () {
                         Email: {userData.email}
                     </p>
                 </div>
-           )}
+            ):(
+                <div>Loading...</div>
+            )}
         </div>
     );
 }

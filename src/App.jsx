@@ -42,7 +42,6 @@ function App() {
       <div className='nav'>
         <button onClick={() => setMenuOpen(!menuOpen)} className='menu-button'>Programs</button>
         <h2>ARJS Lab</h2>
-        <hr />  
       </div>
       {menuOpen && (
         <div className='dropdown-menu'>

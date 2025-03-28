@@ -7,15 +7,22 @@ function SearchFilter() {
   return (
     <div >
       <h1>Search Filter</h1>
-      <input type="text" placeholder='Search...' value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
-      <ul style={{ listStyleType: 'none', padding: 0, margin: 0 }} >
-        {
-          filteredItems.length > 0 ? filteredItems.map((item,index) => <li key={index}>{item}</li>) : <li>No items found</li>
-        }
+      <input 
+        type="text" 
+        placeholder='Search...' 
+        value={searchTerm} 
+        onChange={(e) => setSearchTerm(e.target.value)} 
+        style={{ padding: '10px', width: '50%', fontSize: '16px' }} 
+      />
+      <ul style={{ listStyleType: 'none', padding: 0, margin: '10px' }} >
+        {filteredItems.length > 0 ? (
+          filteredItems.map((item,index) => <li key={index}>{item}</li>)
+        ) : (
+          <li>No items found</li>
+        )}
       </ul>
     </div>
-)
-
+  )
 }
 
 export default SearchFilter
