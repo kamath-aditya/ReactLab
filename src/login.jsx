@@ -21,39 +21,27 @@ function Login() {
     return (
         <div>
             <h2>Login Website</h2>
-            <div>
-                {loggedIn ? (
-                    <div>
-                        <h3>Welcome Admin</h3>
-                        <button type="submit" onClick={()=>setLoggedIn(false)}>SignOut</button>
+            {loggedIn ? (
+                <div>
+                    <h3>Welcome Admin</h3>
+                    <button type="submit" onClick={()=>setLoggedIn(false)}>SignOut</button>
+                </div>
+            ):(
+                <form onSubmit={handleLogin} >
+                    <div style={{margin:'5px'}}>
+                        <label>Username: </label>
+                        <input type="text" placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)} />
                     </div>
-                ):(
-                    <form onSubmit={handleLogin}>
-                        <div>
-                            <label>Username: </label>
-                            <input
-                                type="text"
-                                placeholder="Username"
-                                value={username}
-                                onChange={(e) => setUsername(e.target.value)}
-                            />
-                        </div>
-                        <div>
-                            <label>Password: </label>
-                            <input
-                                type="password"
-                                placeholder="Password"
-                                value={password}
-                                onChange={(e) => setPassword(e.target.value)}
-                            />
-                        </div>
-                        <div>
-                            <button type="submit">Login</button>
-                        </div>
-                        {error && <div style={{ color: "red", marginTop: "10px" }}>{error}</div>}
-                    </form>
-                )}
-            </div>
+                    <div style={{margin:'5px'}}>
+                        <label>Password: </label>
+                        <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                    </div>
+                    <div style={{margin:'5px'}}>
+                        <button type="submit">Login</button>
+                    </div>
+                    {error && <div style={{ color: "red", marginTop: "10px" }}>{error}</div>}
+                </form>
+            )}
         </div>
     );
 }

@@ -22,7 +22,7 @@ function RandomUserData () {
                     </p>
                 </div>
             ):(
-                <div>Loading...</div>
+                <p>Loading...</p>
             )}
         </div>
     );
